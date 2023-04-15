@@ -37,5 +37,12 @@ data:extend({
         default_value = 2.0,
         minimum_value = 0,
         order = "ca"
+    },
+    {
+        type = "bool-setting",
+        name = "space-exploration-configuration-allow-core-fragment-processing-in-mechanical-laboratory",
+        setting_type = "startup",
+        default_value = true,
+        order = "da"
     }
 })
