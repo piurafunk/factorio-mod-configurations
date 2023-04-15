@@ -42,7 +42,7 @@ data:extend({
         type = "bool-setting",
         name = "space-exploration-configuration-allow-core-fragment-processing-in-mechanical-laboratory",
         setting_type = "startup",
-        default_value = true,
+        default_value = false,
         order = "da"
     }
 })
