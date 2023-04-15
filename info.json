@@ -1,14 +1,13 @@
 {
     "name": "space-exploration-configuration",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "title": "Space Exploration Configuration",
     "author": "piurafunk",
     "factorio_version": "1.1",
     "dependencies": [
         "base >= 1.1",
-        "space-exploration >= 0.6",
-        "space-exploration < 0.7"
-
+        "? space-exploration >= 0.6",
+        "? space-exploration < 0.7"
     ],
     "description": "Adds configuration options for various Space Exploration (by Earendel) values."
   }

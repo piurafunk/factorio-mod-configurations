@@ -16,6 +16,14 @@ data:extend({
     },
     {
         type = "int-setting",
+        name = "space-exploration-configuration-underground-deep-space-belt-max-distance",
+        setting_type = "startup",
+        default_value = 17,
+        minimum_value = 0,
+        order = "ac",
+    },
+     {
+        type = "int-setting",
         name = "space-exploration-configuration-space-pipe-to-ground-max-distance",
         setting_type = "startup",
         default_value = 10,
