@@ -1,15 +1,13 @@
-local magic_constant = (1 + 1 / 3) / 10 / 64 -- Whatever the math is, multiplying by this translates "items/second" to the game engine's expected value
-local mod_prefix = 'mod-configurations-'
+config = require('config')
 
 -- Create table of mods we support
-local mods = {{
-    name = 'space-exploration',
-    file = 'space_exploration.lua'
-}}
+local compatibleMods = require('compatability.mods')
 
 -- Iterate over supported mods, and if they are installed, load their respective configuration file
-for _, mod in pairs(mods) do
+for _, mod in pairs(compatibleMods) do
+    log('Checking if ' .. mod.name .. ' is enabled')
     if mods[mod.name] then
-        require('compatability/' .. mod.file)
+        log('Loading ' .. mod.name .. ' configuration')
+        pcall(require, 'compatability.' .. mod.directory .. '.data')
     end
 end
