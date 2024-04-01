@@ -6,7 +6,8 @@
     "factorio_version": "1.1",
     "dependencies": [
         "base >= 1.1",
-        "? space-exploration >= 0.6"
+        "? space-exploration",
+        "? IntermodalContainers"
     ],
     "description": "Adds configuration options for various mod values."
 }
