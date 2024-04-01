@@ -1,13 +1,12 @@
 {
-    "name": "space-exploration-configuration",
-    "version": "0.1.2",
-    "title": "Space Exploration Configuration",
+    "name": "factorio-mod-configurations",
+    "version": "0.2.0",
+    "title": "Mod Configurations",
     "author": "piurafunk",
     "factorio_version": "1.1",
     "dependencies": [
         "base >= 1.1",
-        "? space-exploration >= 0.6",
-        "? space-exploration < 0.7"
+        "? space-exploration >= 0.6"
     ],
-    "description": "Adds configuration options for various Space Exploration (by Earendel) values."
-  }
+    "description": "Adds configuration options for various mod values."
+}
