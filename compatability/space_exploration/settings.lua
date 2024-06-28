@@ -10,7 +10,7 @@ data:extend({
         type = "int-setting",
         name = config.mod_prefix .. "underground-space-belt-max-distance",
         setting_type = "startup",
-        default_value = 10,
+        default_value = 11,
         minimum_value = 0,
         order = "ab"
     },
@@ -19,7 +19,7 @@ data:extend({
         type = "int-setting",
         name = config.mod_prefix .. "underground-deep-space-belt-max-distance",
         setting_type = "startup",
-        default_value = 14,
+        default_value = 15,
         minimum_value = 0,
         order = "ac",
     },
