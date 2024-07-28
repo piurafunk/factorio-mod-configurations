@@ -4,7 +4,6 @@ if script.active_mods['space-exploration'] then
 
     local function setContainerizedCannonRecipesEnabled(research, enabled)
         for _, recipe in pairs(research.force.recipes) do
-            mod_log('intermodal-containers <-> space-exploration: checking recipe ' .. recipe.name)
             if (string.match(recipe.name, 'se%-delivery%-cannon%-pack%-ic%-container%-.*')) then
                 recipe.enabled = enabled
             end
