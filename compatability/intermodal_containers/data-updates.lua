@@ -138,4 +138,20 @@ if (mods['space-exploration']) then
         type = 'unlock-recipe',
         recipe = config.mod_prefix .. 'intermodal-container-recycle',
     })
+
+    -- Iterate over all cannonized items and add their containerized versions to the delivery cannon recipes
+    local new_recipes = {}
+    se_ic_containerized_cannon_recipes = se_ic_containerized_cannon_recipes or {}
+    for _, resource in pairs(se_delivery_cannon_recipes) do
+        local name = 'ic-container-' .. resource.name
+        log('Adding ' .. name .. ' to containerized recipes')
+        new_recipes[config.mod_prefix .. 'containerized-' .. resource.name] = {name = name}
+        table.insert(se_ic_containerized_cannon_recipes, name)
+    end
+
+    -- Merge the new recipes array to the delivery cannon recipes
+    for k, v in pairs(new_recipes) do
+        log('Adding ' .. v.name .. ' to delivery cannon recipes')
+        se_delivery_cannon_recipes[k] = v
+    end
 end
