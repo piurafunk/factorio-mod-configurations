@@ -1,8 +1,21 @@
 if (mods['space-exploration']) then
-    local data_util = require('__space-exploration__.data_util')
-
     log('Space Exploration detected, applying compatibility changes')
 
+    local data_util = require('__space-exploration__.data_util')
+
+    -- Fix containerization machines 1-3 being allowed to be placed in space
+    for i = 1, 3 do
+        -- Get collision mask, or default to empty table
+        local collision_mask = data.raw['assembling-machine']['ic-containerization-machine-' .. i].collision_mask or {}
+        if not data_util.table_contains(collision_mask, space_collision_layer) then
+            table.insert(collision_mask, space_collision_layer)
+        end
+        if not data_util.table_contains(collision_mask, spaceship_collision_layer) then
+            table.insert(collision_mask, spaceship_collision_layer)
+        end
+        data.raw['assembling-machine']['ic-containerization-machine-' .. i].collision_mask = collision_mask
+    end
+    
     -- Fix containerization 3 tech requiring production science pack to research, but isn't listed as a prerequisite
     if not data.raw.technology['ic-containerization-3'].prerequisites['production-science-pack'] then
         table.insert(data.raw.technology['ic-containerization-3'].prerequisites, 'production-science-pack')
