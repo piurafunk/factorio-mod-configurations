@@ -6,7 +6,7 @@ if (mods['space-exploration']) then
     -- Fix containerization machines 1-3 being allowed to be placed in space
     for i = 1, 3 do
         -- Get collision mask, or default to empty table
-        local collision_mask = data.raw['assembling-machine']['ic-containerization-machine-' .. i].collision_mask or {}
+        local collision_mask = data.raw['assembling-machine']['ic-containerization-machine-' .. i].collision_mask or {layers = {}}
         if not data_util.table_contains(collision_mask, space_collision_layer) then
             table.insert(collision_mask, space_collision_layer)
         end
@@ -29,10 +29,10 @@ if (mods['space-exploration']) then
     intermodal_containers.add_tier({
         tier = 4,
         ingredients = {
-            {'ic-containerization-machine-3', 1},
-            {'electric-engine-unit', 8},
-            {'processing-unit', 8},
-            {'steel-plate', 50}
+            {type = 'item', name = 'ic-containerization-machine-3', amount = 1},
+            {type = 'item', name = 'electric-engine-unit', amount = 8},
+            {type = 'item', name = 'processing-unit', amount = 8},
+            {type = 'item', name = 'steel-plate', amount = 50}
         },
         colour = {r = 1, g = 1, b = 1},
         upgrade = nil,
@@ -41,7 +41,7 @@ if (mods['space-exploration']) then
             -- Ingredients
             'steel-processing',
             'electric-engine',
-            'advanced-electronics-2',
+            'processing-unit',
             'ic-containerization-3',
             -- Sciences
             'logistic-science-pack',
@@ -74,10 +74,10 @@ if (mods['space-exploration']) then
     intermodal_containers.add_tier({
         tier = 5,
         ingredients = {
-            {'ic-containerization-machine-4', 1},
-            {'se-heavy-assembly', 8},
-            {'se-quantum-processor', 8},
-            {'se-heavy-girder', 15},
+            {type = 'item', name = 'ic-containerization-machine-4', amount = 1},
+            {type = 'item', name = 'se-heavy-assembly', amount = 8},
+            {type = 'item', name = 'se-quantum-processor', amount = 8},
+            {type = 'item', name = 'se-heavy-girder', amount = 15},
         },
         colour = {r = 0, g = 0, b = 0},
         upgrade = nil,

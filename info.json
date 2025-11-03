@@ -3,7 +3,7 @@
     "version": "0.2.0",
     "title": "Mod Configurations",
     "author": "piurafunk",
-    "factorio_version": "1.1",
+    "factorio_version": "2.0",
     "dependencies": [
         "base >= 1.1",
         "? space-exploration",
